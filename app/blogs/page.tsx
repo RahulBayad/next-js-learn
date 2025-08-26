@@ -1,16 +1,17 @@
-import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
+import { PageProps } from '../../.next/types/app/layout'
 
 export const metadata = {
   title: "Blogs"
 }
 
-export default function blogs(props) {
-  console.log(props)
+export default async function blogs({params}: PageProps) {
+  const { blog } = await params
+  console.log(blog)
   return (
     <div>
-        <Link href="/blogs/1">Blog1</Link>
+        <Link href="/blogs/1">Blog {blog}</Link>
     </div>
   )
 }

@@ -1,13 +1,13 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import { PageProps } from "../.next/types/app/layout";
 
 // Apply only on this page
 export const  metadata: Metadata = {
   title: "Home"
 } 
 
-export default function Home({params}) {
+export default function Home({params}: PageProps) {
   console.log("params", params)
   return (
     <div>
